@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Suplementación, equipamiento y ropa para entrenar sin excusas.">
+    <title>PJG Fitness</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header class="header header-inicio">
+        <div class="contenedor">
+            <img src="img/logo.jpg" alt="Logotipo PJG Suplementación" class="logo-img">
+            <p class="nombre">PJG FITNESS</p>
+            <a href="tienda.html">Tienda</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="contenedor">
+                <p class="etiqueta">PJG / Train Hard</p>
+                <h1>Sin excusas.<br>Solo resultados.</h1>
+                <video autoplay muted loop playsinline poster="img/hero-poster.jpg">
+                    <source src="video/hero.mp4" type="video/mp4">
+                </video>
+                <p class="texto">Suplementación directa, prendas resistentes y el material que necesitas para llevar cada sesión al límite.</p>
+                <a href="tienda.html" class="boton">Entrar en la tienda</a>
+            </div>
+        </section>
+
+        <section class="categorias">
+            <div class="contenedor">
+                <h2 class="titulo">Equipa tu objetivo</h2>
+                <div class="lista-categorias">
+                    <a href="tienda.html" class="categoria clara">
+                        <img src="img/suplementacion.jpg" alt="Persona echando polvo de proteína en un shaker">
+                        <div>
+                            <h3>Suplementación</h3>
+                            <p>Proteína · Energía · Recuperación</p>
+                        </div>
+                    </a>
+                    <a href="tienda.html" class="categoria oscura">
+                        <img src="img/equipamiento.jpg" alt="Hilera de mancuernas en el gimnasio">
+                        <div>
+                            <h3>Equipamiento</h3>
+                            <p>Accesorios · Rendimiento · Fuerza</p>
+                        </div>
+                    </a>
+                    <a href="tienda.html" class="categoria clara">
+                        <img src="img/merch.jpg" alt="Camiseta de tirantes, toalla y gorra colgadas">
+                        <div>
+                            <h3>Merch</h3>
+                            <p>Ropa · Gym bag · Identidad PJG</p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="contacto" id="contacto">
+            <div class="contenedor">
+                <div class="intro">
+                    <p class="etiqueta">Hablamos</p>
+                    <h2 class="titulo">Contacta con nosotros</h2>
+                    <p class="texto">¿Dudas con un producto o con tu pedido? Escríbenos y te respondemos en menos de 24 horas.</p>
+                </div>
+
+                <form action="#" method="POST" class="formulario">
+                    <div class="grupo">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+                    </div>
+                    <div class="grupo">
+                        <label for="email">Correo electrónico</label>
+                        <input type="email" id="email" name="email" placeholder="tucorreo@ejemplo.com" required>
+                    </div>
+                    <div class="grupo">
+                        <label for="asunto">Asunto</label>
+                        <select id="asunto" name="asunto">
+                            <option value="producto">Consulta sobre un producto</option>
+                            <option value="pedido">Estado de mi pedido</option>
+                            <option value="otro">Otro</option>
+                        </select>
+                    </div>
+                    <div class="grupo">
+                        <label for="mensaje">Mensaje</label>
+                        <textarea id="mensaje" name="mensaje" rows="4" placeholder="Cuéntanos en qué podemos ayudarte" required></textarea>
+                    </div>
+                    <label class="check">
+                        <input type="checkbox" name="privacidad" required>
+                        Acepto la política de privacidad
+                    </label>
+                    <button type="submit" class="boton">Enviar mensaje</button>
+                </form>
+            </div>
+        </section>
+    </main>
+</body>
+</html>
