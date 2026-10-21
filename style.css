@@ -464,3 +464,30 @@ textarea {
         flex-direction: column;
     }
 }
+
+/* Footer con licencia Creative Commons */
+.footer {
+    padding: 30px 20px;
+    border-top: 1px solid var(--rojo);
+    text-align: center;
+    background-color: var(--tarjeta);
+    color: var(--gris);
+    font-size: 18px;
+}
+
+.footer a {
+    color: var(--texto);
+    text-decoration: underline;
+}
+
+.iconos-cc {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+    margin-top: 10px;
+}
+
+.iconos-cc img {
+    width: 22px;
+    height: 22px;
+}
