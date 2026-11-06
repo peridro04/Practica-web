@@ -456,6 +456,177 @@ textarea {
     min-width: 0;
 }
 
+/* Slider de productos destacados (solo CSS) */
+.destacados {
+    padding-top: 56px;
+}
+
+.slider {
+    position: relative;
+    height: 420px;
+    margin-top: 24px;
+    overflow: hidden;
+    border-radius: 8px;
+    background-color: var(--tarjeta);
+}
+
+.slide {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    animation: pasar 20s infinite;
+}
+
+.slide img {
+    height: 100%;
+}
+
+/* Cada diapositiva empieza 4 segundos después de la anterior */
+.slide:nth-child(2) { animation-delay: 4s; }
+.slide:nth-child(3) { animation-delay: 8s; }
+.slide:nth-child(4) { animation-delay: 12s; }
+.slide:nth-child(5) { animation-delay: 16s; }
+
+.slide-texto {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    padding: 20px 28px 26px;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.85));
+    font-size: 34px;
+    font-weight: 800;
+    text-transform: uppercase;
+}
+
+/* Barra roja que se llena mientras se ve cada foto */
+.progreso {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 5px;
+    background-color: var(--rojo);
+    animation: llenar 4s linear infinite;
+}
+
+.slider:hover .slide,
+.slider:hover .progreso {
+    animation-play-state: paused;
+}
+
+/* Cada foto aparece, se queda y se desvanece (20 % de 20 s = 4 s) */
+@keyframes pasar {
+    0% {
+        opacity: 0;
+    }
+    5% {
+        opacity: 1;
+    }
+    20% {
+        opacity: 1;
+    }
+    25% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+
+@keyframes llenar {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+/* Animaciones de la página */
+@keyframes subir {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulso {
+    0% {
+        box-shadow: 0 0 0 0 rgba(225, 38, 45, 0.6);
+    }
+    70% {
+        box-shadow: 0 0 0 14px rgba(225, 38, 45, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(225, 38, 45, 0);
+    }
+}
+
+/* Portada: los textos suben al cargar la página */
+.hero .etiqueta {
+    animation: subir 0.8s ease-out backwards;
+}
+
+.hero h1 {
+    animation: subir 0.8s ease-out 0.2s backwards;
+}
+
+.hero .texto {
+    animation: subir 0.8s ease-out 0.4s backwards;
+}
+
+/* El botón de la portada sube y luego late para llamar la atención */
+.hero .boton {
+    animation: subir 0.8s ease-out 0.6s backwards, pulso 2s ease-out 1.6s infinite;
+}
+
+/* Botones: se levantan al pasar el ratón */
+.boton {
+    transition: background-color 0.2s, transform 0.2s;
+}
+
+.boton:hover {
+    transform: translateY(-3px);
+}
+
+/* Categorías: la foto se acerca al pasar el ratón */
+.categoria img {
+    transition: transform 0.4s;
+}
+
+.categoria:hover img {
+    transform: scale(1.1);
+}
+
+/* Tarjetas de la tienda: se elevan al pasar el ratón */
+.producto {
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.producto:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 10px 24px rgba(225, 38, 45, 0.25);
+}
+
+/* Si el usuario prefiere menos movimiento, se quitan las animaciones */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+
+    .slide:first-child {
+        opacity: 1;
+    }
+}
+
 /* Tablet */
 @media (max-width: 1000px) {
     .contenedor {
@@ -515,6 +686,10 @@ textarea {
     }
 
     .foto-grande img {
+        height: 340px;
+    }
+
+    .slider {
         height: 340px;
     }
 }
@@ -611,6 +786,15 @@ textarea {
 
     .precio-grande {
         font-size: 36px;
+    }
+
+    .slider {
+        height: 240px;
+    }
+
+    .slide-texto {
+        padding: 14px 16px 18px;
+        font-size: 22px;
     }
 }
 
