@@ -1,0 +1,73 @@
+// ==========================================================
+// Tema de Bootstrap adaptado a PJG Fitness
+// Estas variables se definen ANTES de importar Bootstrap para
+// sustituir sus valores por defecto (todas usan !default).
+// ==========================================================
+
+// Colores principales del tema
+$primary: $rojo;
+$secondary: #3a3a3f;
+$dark: $fondo;
+$light: $texto;
+$success: #2fb36d;
+$danger: #ff5a5f;
+
+// Tipografía
+$font-family-sans-serif: $fuente;
+$font-size-base: 1.2rem;
+$headings-font-weight: 800;
+$headings-line-height: 1;
+$lead-font-size: 1.4rem;
+
+// Bordes redondeados
+$border-radius: 4px;
+$border-radius-sm: 3px;
+$border-radius-lg: $radio;
+
+// Modo oscuro (la web usa data-bs-theme="dark")
+$body-bg-dark: $fondo;
+$body-color-dark: $texto;
+$body-secondary-color-dark: $gris;
+$body-secondary-bg-dark: $tarjeta-clara;
+$body-tertiary-bg-dark: $tarjeta;
+$border-color-dark: $borde;
+$link-color-dark: $texto;
+$link-hover-color-dark: $rojo;
+$headings-color-dark: $texto;
+$primary-text-emphasis-dark: #f07a7e;
+$primary-bg-subtle-dark: #2d0a0c;
+$primary-border-subtle-dark: #6b1317;
+
+// Botones
+$btn-font-weight: 800;
+$btn-padding-x: 1.25rem;
+$btn-focus-box-shadow: 0 0 0 .25rem rgba($rojo, .35);
+
+// Formularios
+$input-bg: $fondo;
+$input-border-color: $borde;
+$input-focus-border-color: $rojo;
+$input-focus-box-shadow: 0 0 0 .25rem rgba($rojo, .25);
+$form-check-input-checked-bg-color: $rojo;
+$form-check-input-checked-border-color: $rojo;
+$focus-ring-color: rgba($rojo, .35);
+
+// Componentes
+$card-bg: $tarjeta;
+$card-border-color: $borde;
+$modal-content-bg: $tarjeta;
+$modal-content-border-color: $borde;
+$offcanvas-bg-color: $tarjeta;
+$toast-background-color: $tarjeta;
+$toast-header-background-color: $tarjeta-clara;
+$toast-header-color: $texto;
+$list-group-bg: $tarjeta;
+$accordion-bg: $tarjeta;
+$accordion-button-active-bg: $tarjeta-clara;
+$accordion-button-active-color: $texto;
+$breadcrumb-divider: quote("›");
+$breadcrumb-active-color: $gris;
+$progress-bar-bg: $rojo;
+$navbar-dark-color: rgba($texto, .78);
+$navbar-dark-hover-color: $texto;
+$navbar-dark-active-color: $texto;

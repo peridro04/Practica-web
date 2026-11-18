@@ -1,77 +1,309 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-bs-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Suplementación, equipamiento y ropa para entrenar sin excusas.">
+    <meta name="description" content="Mezcla limpia, acero resistente y diseño PJG.">
     <title>Shaker Steel 700ml | PJG Fitness</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
     <link rel="icon" href="../favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="../style.css">
+    <!-- Único CSS de la web: Bootstrap + estilos propios compilados con SASS -->
+    <link rel="stylesheet" href="../css/style.css">
 </head>
-<body>
-    <header class="header">
-        <div class="contenedor">
-            <a href="../index.html" class="logo">PJG FITNESS</a>
-            <a href="../tienda.html">← Tienda</a>
+<body data-raiz="../">
+    <!-- Navbar fija y común a todas las páginas -->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-pjg" data-bs-theme="dark" aria-label="Navegación principal">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html"><i class="bi bi-lightning-charge-fill" aria-hidden="true"></i>PJG FITNESS</a>
+            <div class="acciones order-lg-last">
+                <a href="../login.html" class="btn btn-icono" aria-label="Mi cuenta"><i class="bi bi-person" aria-hidden="true"></i><span class="nombre-usuario d-none d-sm-inline">Entrar</span></a>
+                <button class="btn btn-primary btn-carrito" type="button" data-bs-toggle="offcanvas" data-bs-target="#carrito" aria-controls="carrito" aria-label="Abrir carrito">
+                    <i class="bi bi-bag" aria-hidden="true"></i>
+                    <span class="badge rounded-pill contador-carrito">0</span>
+                </button>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Abrir menú">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="../index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link active" href="../tienda.html" aria-current="page">Tienda</a></li>
+                    <li class="nav-item"><a class="nav-link" href="../novedades.html">Novedades <span class="badge text-bg-primary ms-1">Nuevo</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="../index.html#contacto">Contacto</a></li>
+                </ul>
+            </div>
         </div>
-    </header>
+    </nav>
 
     <main>
-        <section class="contenedor">
-            <div class="ficha">
-                <div class="foto-grande">
-                    <img src="../img/shaker.webp" alt="Shaker Steel 700ml">
-                    <span class="etiqueta-grande">Accesorios</span>
-                </div>
+        <section class="cabecera-pagina pb-0">
+            <div class="container">
+                <nav aria-label="Migas de pan">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="../index.html">Inicio</a></li>
+                        <li class="breadcrumb-item"><a href="../tienda.html">Tienda</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Shaker Steel 700ml</li>
+                    </ol>
+                </nav>
+            </div>
+        </section>
 
-                <div class="info">
-                    <p class="etiqueta">Accesorios</p>
-                    <h1 class="titulo">Shaker Steel 700ml</h1>
-                    <p class="texto">Mezcla limpia, acero resistente y diseño PJG.</p>
-                    <p class="precio-grande">16,90 €</p>
+        <section class="seccion pt-3">
+            <div class="container">
+                <div class="row g-5 align-items-center ficha">
+                    <div class="col-lg-6">
+                        <div class="foto-grande">
+                            <img src="../img/shaker.webp" alt="Shaker Steel 700ml">
+                            <span class="badge text-bg-dark">Accesorios</span>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <p class="etiqueta">Accesorios</p>
+                        <h1>Shaker Steel 700ml</h1>
+                        <p class="valoracion" aria-label="4 de 5 estrellas"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star"></i><span>(54 reseñas)</span></p>
+                        <p class="texto">Mezcla limpia, acero resistente y diseño PJG.</p>
+                        <p class="d-flex align-items-baseline gap-3 my-4">
+                            <span class="precio-grande">16,90 €</span>
+                        </p>
+                        <div class="mb-4">
+                            <label for="opcion" class="form-label">Color</label>
+                            <select id="opcion" class="form-select">
+                                <option>Negro</option>
+                                <option>Acero</option>
+                            </select>
+                        </div>
+                        <div class="d-flex flex-wrap gap-3 align-items-end mb-4">
+                            <div>
+                                <label for="cantidad" class="form-label">Cantidad</label>
+                                <div class="input-group selector-cantidad">
+                                    <button class="btn btn-outline-secondary" type="button" data-cantidad="-1" aria-label="Quitar uno">−</button>
+                                    <input type="number" class="form-control" id="cantidad" value="1" min="1" max="10">
+                                    <button class="btn btn-outline-secondary" type="button" data-cantidad="1" aria-label="Añadir uno">+</button>
+                                </div>
+                            </div>
+                            <button type="button" class="btn btn-outline-light btn-lg btn-anadir flex-grow-1" data-id="shaker" data-nombre="Shaker Steel 700ml" data-precio="16.90" data-img="shaker.webp"><i class="bi bi-bag-plus" aria-hidden="true"></i> Añadir al carrito</button>
+                            <button type="button" class="btn btn-primary btn-lg btn-comprar flex-grow-1" data-id="shaker" data-nombre="Shaker Steel 700ml" data-precio="16.90" data-img="shaker.webp"><i class="bi bi-lightning-charge-fill" aria-hidden="true"></i> Comprar ahora</button>
+                        </div>
+                        <ul class="ventajas-compra">
+                            <li><i class="bi bi-truck" aria-hidden="true"></i>Envío 24/48 h · gratis desde 50 €</li>
+                            <li><i class="bi bi-arrow-repeat" aria-hidden="true"></i>30 días para devolverlo</li>
+                            <li><i class="bi bi-shield-lock" aria-hidden="true"></i>Pago seguro con tarjeta, PayPal o Bizum</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section class="franja">
-            <div class="contenedor">
-                <p>Envío 24/48 h</p>
-                <p>Calidad PJG garantizada</p>
+        <section class="seccion pt-0 pestanas">
+            <div class="container">
+                <ul class="nav nav-tabs" id="pestanas" role="tablist">
+                    <li class="nav-item" role="presentation"><button class="nav-link active" id="tab-desc" data-bs-toggle="tab" data-bs-target="#desc" type="button" role="tab" aria-controls="desc" aria-selected="true">Descripción</button></li>
+                    <li class="nav-item" role="presentation"><button class="nav-link" id="tab-specs" data-bs-toggle="tab" data-bs-target="#specs" type="button" role="tab" aria-controls="specs" aria-selected="false">Detalles</button></li>
+                    <li class="nav-item" role="presentation"><button class="nav-link" id="tab-envio" data-bs-toggle="tab" data-bs-target="#envio" type="button" role="tab" aria-controls="envio" aria-selected="false">Envío</button></li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane fade show active" id="desc" role="tabpanel" aria-labelledby="tab-desc" tabindex="0">
+                        <div class="row g-4">
+                            <div class="col-md-7">
+                                <h2>Mezcla limpia, ritmo constante</h2>
+                                <p class="mb-0">Un shaker de acero de 700 ml pensado para proteína, pre-entreno y agua. Resistente, sobrio y listo para acompañarte todos los días.</p>
+                            </div>
+                            <div class="col-md-5">
+                                <h2>Cómo usarlo</h2>
+                                <p class="mb-0">Añade primero el líquido y después el polvo. Cierra bien la tapa y agita 10 segundos. Lavar a mano.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="specs" role="tabpanel" aria-labelledby="tab-specs" tabindex="0">
+                        <div class="table-responsive">
+                            <table class="table table-striped align-middle">
+                                <caption class="visually-hidden">Detalles de Shaker Steel 700ml</caption>
+                                <tbody>
+                                        <tr><th scope="row">Capacidad</th><td>700 ml</td></tr>
+                                        <tr><th scope="row">Material</th><td>Acero inoxidable 18/8</td></tr>
+                                        <tr><th scope="row">Tapa</th><td>Rosca antigoteo</td></tr>
+                                        <tr><th scope="row">Sin BPA</th><td>Sí</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="envio" role="tabpanel" aria-labelledby="tab-envio" tabindex="0">
+                        <p>Enviamos en 24/48 h a la península. El envío estándar cuesta 3,90 € y es gratis desde 50 €. El envío express (24 h) cuesta 5,90 €.</p>
+                        <p class="mb-0">Tienes 30 días para devolver el producto sin abrir.</p>
+                    </div>
+                </div>
             </div>
         </section>
 
-        <section class="detalle">
-            <div class="contenedor">
-                <div class="columna">
-                    <h2>Lo esencial</h2>
-                    <ul>
-                        <li>Producto seleccionado por PJG</li>
-                        <li>Envío rápido 24/48 h</li>
-                        <li>Pago seguro</li>
-                    </ul>
-                </div>
-                <div class="columna">
-                    <h2>Mezcla limpia, ritmo constante</h2>
-                    <p class="texto">Un shaker de acero de 700 ml pensado para proteína, pre-entreno y agua. Resistente, sobrio y listo para acompañarte todos los días.</p>
+        <section class="seccion seccion-oscura">
+            <div class="container">
+                <p class="etiqueta">Sigue mirando</p>
+                <h2 class="titulo mb-4">También te puede gustar</h2>
+                <div class="row g-4">
+                    <div class="col-sm-6 col-lg-4" data-categoria="suplementacion">
+                        <article class="card h-100 producto">
+                            <div class="foto">
+                                <img src="../img/creatina.webp" alt="Creatina Monohidrato" loading="lazy">
+                                <span class="badge text-bg-dark etiqueta-foto">Fuerza</span>
+                            </div>
+                            <div class="card-body">
+                                <h3 class="card-title"><a href="../productos/creatina.html" class="stretched-link">Creatina Monohidrato</a></h3>
+                                <p class="card-text">Creatina micronizada pura para apoyar fuerza y rendimiento.</p>
+                                <div class="pie">
+                                    <span><span class="precio">21,90 €</span></span>
+                                    <button type="button" class="btn btn-primary btn-anadir" data-id="creatina" data-nombre="Creatina Monohidrato" data-precio="21.90" data-img="creatina.webp" aria-label="Añadir Creatina Monohidrato al carrito"><i class="bi bi-bag-plus" aria-hidden="true"></i> Añadir</button>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-sm-6 col-lg-4" data-categoria="merch">
+                        <article class="card h-100 producto">
+                            <div class="foto">
+                                <img src="../img/camiseta.webp" alt="Camiseta 2KG" loading="lazy">
+                                <span class="badge text-bg-dark etiqueta-foto">Merch</span>
+                            </div>
+                            <div class="card-body">
+                                <h3 class="card-title"><a href="../productos/camiseta.html" class="stretched-link">Camiseta 2KG</a></h3>
+                                <p class="card-text">Corte amplio y tejido pesado para entrenar cómodo.</p>
+                                <div class="pie">
+                                    <span><span class="precio">32,90 €</span></span>
+                                    <button type="button" class="btn btn-primary btn-anadir" data-id="camiseta" data-nombre="Camiseta 2KG" data-precio="32.90" data-img="camiseta.webp" aria-label="Añadir Camiseta 2KG al carrito"><i class="bi bi-bag-plus" aria-hidden="true"></i> Añadir</button>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
+                    <div class="col-sm-6 col-lg-4" data-categoria="suplementacion">
+                        <article class="card h-100 producto">
+                            <div class="foto">
+                                <img src="../img/proteina.webp" alt="Proteina 2KG" loading="lazy">
+                                <span class="badge text-bg-dark etiqueta-foto">Proteína</span>
+                            </div>
+                            <div class="card-body">
+                                <h3 class="card-title"><a href="../productos/proteina.html" class="stretched-link">Proteina 2KG</a></h3>
+                                <p class="card-text">Aislado de suero ultrafiltrado. 25 g de proteína por toma.</p>
+                                <div class="pie">
+                                    <span><span class="precio">54,90 €</span></span>
+                                    <button type="button" class="btn btn-primary btn-anadir" data-id="proteina" data-nombre="Proteina 2KG" data-precio="54.90" data-img="proteina.webp" aria-label="Añadir Proteina 2KG al carrito"><i class="bi bi-bag-plus" aria-hidden="true"></i> Añadir</button>
+                                </div>
+                            </div>
+                        </article>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer class="footer">
-        <p>
-            <a href="../index.html">PJG Fitness</a> por Pedro Jurado Gavilán está bajo licencia
-            <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" target="_blank" rel="license noopener noreferrer">CC BY-NC-SA 4.0</a>
-        </p>
-        <p class="iconos-cc">
-            <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt="Creative Commons">
-            <img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt="Atribución">
-            <img src="https://mirrors.creativecommons.org/presskit/icons/nc.svg" alt="No comercial">
-            <img src="https://mirrors.creativecommons.org/presskit/icons/sa.svg" alt="Compartir igual">
-        </p>
+    <!-- Footer común -->
+    <footer class="footer-pjg">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <p class="marca"><i class="bi bi-lightning-charge-fill" aria-hidden="true"></i> PJG FITNESS</p>
+                    <p>Suplementación directa, prendas resistentes y el material que necesitas para llevar cada sesión al límite.</p>
+                    <div class="redes d-flex gap-2">
+                        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                        <a href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+                        <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h2>Tienda</h2>
+                    <ul>
+                        <li><a href="../tienda.html?cat=suplementacion">Suplementación</a></li>
+                        <li><a href="../tienda.html?cat=equipamiento">Equipamiento</a></li>
+                        <li><a href="../tienda.html?cat=merch">Merch</a></li>
+                        <li><a href="../novedades.html">Iron Series</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h2>Mi cuenta</h2>
+                    <ul>
+                        <li><a href="../login.html">Iniciar sesión</a></li>
+                        <li><a href="../registro.html">Crear cuenta</a></li>
+                        <li><a href="../pago.html">Finalizar compra</a></li>
+                        <li><a href="../index.html#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h2>Newsletter</h2>
+                    <p>Entérate antes que nadie de los lanzamientos y llévate un 10 % de descuento.</p>
+                    <form class="needs-validation" data-form="newsletter" novalidate>
+                        <div class="input-group has-validation">
+                            <label for="emailNews" class="visually-hidden">Correo electrónico</label>
+                            <input type="email" class="form-control" id="emailNews" placeholder="tucorreo@ejemplo.com" required>
+                            <button class="btn btn-primary" type="submit">Unirme</button>
+                            <div class="invalid-feedback">Escribe un correo válido.</div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="licencia">
+                <p class="mb-0">
+                    &copy; <span class="anio">2026</span> <a href="../index.html">PJG Fitness</a> por Pedro Jurado Gavilán está bajo licencia
+                    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" target="_blank" rel="license noopener noreferrer">CC BY-NC-SA 4.0</a>
+                </p>
+                <p class="iconos-cc">
+                    <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt="Creative Commons">
+                    <img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt="Atribución">
+                    <img src="https://mirrors.creativecommons.org/presskit/icons/nc.svg" alt="No comercial">
+                    <img src="https://mirrors.creativecommons.org/presskit/icons/sa.svg" alt="Compartir igual">
+                </p>
+            </div>
+        </div>
     </footer>
+
+    <!-- Carrito lateral (offcanvas de Bootstrap) -->
+    <div class="offcanvas offcanvas-end offcanvas-carrito" tabindex="-1" id="carrito" aria-labelledby="tituloCarrito">
+        <div class="offcanvas-header">
+            <h2 class="offcanvas-title" id="tituloCarrito">Tu carrito</h2>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Cerrar carrito"></button>
+        </div>
+        <div class="offcanvas-body" id="listaCarrito"></div>
+        <div class="offcanvas-footer">
+            <p class="total"><span>Total</span><span id="totalCarrito">0,00 €</span></p>
+            <a href="../pago.html" class="btn btn-primary btn-lg w-100" id="btnFinalizar">Finalizar compra</a>
+        </div>
+    </div>
+
+    <!-- Aviso al añadir un producto (toast de Bootstrap) -->
+    <div class="toast-container position-fixed end-0 p-3">
+        <div id="toastCarrito" class="toast" role="status" aria-live="polite" aria-atomic="true">
+            <div class="toast-header">
+                <i class="bi bi-bag-check-fill text-primary me-2" aria-hidden="true"></i>
+                <strong class="me-auto">Carrito</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Cerrar"></button>
+            </div>
+            <div class="toast-body">
+                <span></span>
+                <div class="mt-2 d-flex gap-2">
+                    <button type="button" class="btn btn-sm btn-outline-light" data-bs-toggle="offcanvas" data-bs-target="#carrito">Ver carrito</button>
+                    <a href="../pago.html" class="btn btn-sm btn-primary">Comprar ya</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de aviso: compra, registro, inicio de sesión, mensajes... -->
+    <div class="modal fade modal-aviso" id="modalAviso" tabindex="-1" aria-labelledby="tituloAviso" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="icono"><i class="bi bi-check-lg" aria-hidden="true"></i></div>
+                    <h2 class="modal-title" id="tituloAviso">Hecho</h2>
+                    <p class="mensaje texto mb-0"></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">Cerrar</button>
+                    <a href="#" class="btn btn-primary accion d-none">Continuar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/bootstrap.bundle.min.js"></script>
+    <script src="../js/main.js"></script>
 </body>
 </html>

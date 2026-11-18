@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="es" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Crea tu cuenta de PJG Fitness.">
+    <title>Crear cuenta | PJG Fitness</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <!-- Único CSS de la web: Bootstrap + estilos propios compilados con SASS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-raiz="">
+    <!-- Navbar fija y común a todas las páginas -->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-pjg" data-bs-theme="dark" aria-label="Navegación principal">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><i class="bi bi-lightning-charge-fill" aria-hidden="true"></i>PJG FITNESS</a>
+            <div class="acciones order-lg-last">
+                <a href="login.html" class="btn btn-icono active" aria-label="Mi cuenta"><i class="bi bi-person" aria-hidden="true"></i><span class="nombre-usuario d-none d-sm-inline">Entrar</span></a>
+                <button class="btn btn-primary btn-carrito" type="button" data-bs-toggle="offcanvas" data-bs-target="#carrito" aria-controls="carrito" aria-label="Abrir carrito">
+                    <i class="bi bi-bag" aria-hidden="true"></i>
+                    <span class="badge rounded-pill contador-carrito">0</span>
+                </button>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Abrir menú">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="tienda.html">Tienda</a></li>
+                    <li class="nav-item"><a class="nav-link" href="novedades.html">Novedades <span class="badge text-bg-primary ms-1">Nuevo</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#contacto">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="cuenta">
+            <div class="container">
+                <div class="row g-0 panel">
+                    <div class="col-lg-5 d-none d-lg-block">
+                        <div class="lateral" style="background-image: linear-gradient(transparent 30%, rgba(11, 11, 12, .92)), url('img/merch.webp')">
+                            <p class="etiqueta">PJG Fitness</p>
+                            <h2>Únete al equipo</h2>
+                            <ul>
+                                <li><i class="bi bi-check-lg" aria-hidden="true"></i>10 % en tu primera compra</li>
+                                <li><i class="bi bi-check-lg" aria-hidden="true"></i>Acceso antes a los lanzamientos</li>
+                                <li><i class="bi bi-check-lg" aria-hidden="true"></i>Historial de pedidos</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-7">
+                        <div class="contenido">
+                            <p class="etiqueta">Mi cuenta</p>
+                            <h1 class="titulo">Crear cuenta</h1>
+                            <form class="needs-validation mt-4" data-form="registro" novalidate>
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label for="nombreRegistro" class="form-label">Nombre</label>
+                                        <input type="text" class="form-control" id="nombreRegistro" autocomplete="given-name" required>
+                                        <div class="invalid-feedback">Dinos tu nombre.</div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="apellidosRegistro" class="form-label">Apellidos</label>
+                                        <input type="text" class="form-control" id="apellidosRegistro" autocomplete="family-name" required>
+                                        <div class="invalid-feedback">Dinos tus apellidos.</div>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="emailRegistro" class="form-label">Correo electrónico</label>
+                                        <input type="email" class="form-control" id="emailRegistro" autocomplete="email" placeholder="tucorreo@ejemplo.com" required>
+                                        <div class="invalid-feedback">Escribe un correo válido.</div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="claveRegistro" class="form-label">Contraseña</label>
+                                        <div class="input-group has-validation">
+                                            <input type="password" class="form-control" id="claveRegistro" autocomplete="new-password" minlength="6" aria-describedby="ayudaClave" required>
+                                            <button class="btn btn-outline-secondary" type="button" data-ver-clave="claveRegistro" aria-label="Mostrar contraseña"><i class="bi bi-eye"></i></button>
+                                            <div class="invalid-feedback">Mínimo 6 caracteres.</div>
+                                        </div>
+                                        <div id="ayudaClave" class="form-text">Mínimo 6 caracteres.</div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="clave2Registro" class="form-label">Repite la contraseña</label>
+                                        <input type="password" class="form-control" id="clave2Registro" autocomplete="new-password" required>
+                                        <div class="invalid-feedback">Las contraseñas no coinciden.</div>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="objetivo" class="form-label">¿Cuál es tu objetivo?</label>
+                                        <select class="form-select" id="objetivo">
+                                            <option>Ganar fuerza</option>
+                                            <option>Ganar masa muscular</option>
+                                            <option>Perder grasa</option>
+                                            <option>Mejorar mi rendimiento</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="terminos" required>
+                                            <label class="form-check-label" for="terminos">Acepto las condiciones y la política de privacidad</label>
+                                            <div class="invalid-feedback">Tienes que aceptarlas para crear la cuenta.</div>
+                                        </div>
+                                        <div class="form-check mt-2">
+                                            <input class="form-check-input" type="checkbox" id="ofertas" checked>
+                                            <label class="form-check-label" for="ofertas">Quiero recibir ofertas y novedades</label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <button type="submit" class="btn btn-primary btn-lg w-100">Crear cuenta</button>
+                                    </div>
+                                </div>
+                            </form>
+                            <p class="separador my-4">o</p>
+                            <p class="text-center mb-0">¿Ya tienes cuenta? <a href="login.html" class="link-primary fw-bold">Inicia sesión</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer común -->
+    <footer class="footer-pjg">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <p class="marca"><i class="bi bi-lightning-charge-fill" aria-hidden="true"></i> PJG FITNESS</p>
+                    <p>Suplementación directa, prendas resistentes y el material que necesitas para llevar cada sesión al límite.</p>
+                    <div class="redes d-flex gap-2">
+                        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                        <a href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+                        <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h2>Tienda</h2>
+                    <ul>
+                        <li><a href="tienda.html?cat=suplementacion">Suplementación</a></li>
+                        <li><a href="tienda.html?cat=equipamiento">Equipamiento</a></li>
+                        <li><a href="tienda.html?cat=merch">Merch</a></li>
+                        <li><a href="novedades.html">Iron Series</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h2>Mi cuenta</h2>
+                    <ul>
+                        <li><a href="login.html">Iniciar sesión</a></li>
+                        <li><a href="registro.html">Crear cuenta</a></li>
+                        <li><a href="pago.html">Finalizar compra</a></li>
+                        <li><a href="index.html#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h2>Newsletter</h2>
+                    <p>Entérate antes que nadie de los lanzamientos y llévate un 10 % de descuento.</p>
+                    <form class="needs-validation" data-form="newsletter" novalidate>
+                        <div class="input-group has-validation">
+                            <label for="emailNews" class="visually-hidden">Correo electrónico</label>
+                            <input type="email" class="form-control" id="emailNews" placeholder="tucorreo@ejemplo.com" required>
+                            <button class="btn btn-primary" type="submit">Unirme</button>
+                            <div class="invalid-feedback">Escribe un correo válido.</div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="licencia">
+                <p class="mb-0">
+                    &copy; <span class="anio">2026</span> <a href="index.html">PJG Fitness</a> por Pedro Jurado Gavilán está bajo licencia
+                    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" target="_blank" rel="license noopener noreferrer">CC BY-NC-SA 4.0</a>
+                </p>
+                <p class="iconos-cc">
+                    <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt="Creative Commons">
+                    <img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt="Atribución">
+                    <img src="https://mirrors.creativecommons.org/presskit/icons/nc.svg" alt="No comercial">
+                    <img src="https://mirrors.creativecommons.org/presskit/icons/sa.svg" alt="Compartir igual">
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Carrito lateral (offcanvas de Bootstrap) -->
+    <div class="offcanvas offcanvas-end offcanvas-carrito" tabindex="-1" id="carrito" aria-labelledby="tituloCarrito">
+        <div class="offcanvas-header">
+            <h2 class="offcanvas-title" id="tituloCarrito">Tu carrito</h2>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Cerrar carrito"></button>
+        </div>
+        <div class="offcanvas-body" id="listaCarrito"></div>
+        <div class="offcanvas-footer">
+            <p class="total"><span>Total</span><span id="totalCarrito">0,00 €</span></p>
+            <a href="pago.html" class="btn btn-primary btn-lg w-100" id="btnFinalizar">Finalizar compra</a>
+        </div>
+    </div>
+
+    <!-- Aviso al añadir un producto (toast de Bootstrap) -->
+    <div class="toast-container position-fixed end-0 p-3">
+        <div id="toastCarrito" class="toast" role="status" aria-live="polite" aria-atomic="true">
+            <div class="toast-header">
+                <i class="bi bi-bag-check-fill text-primary me-2" aria-hidden="true"></i>
+                <strong class="me-auto">Carrito</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Cerrar"></button>
+            </div>
+            <div class="toast-body">
+                <span></span>
+                <div class="mt-2 d-flex gap-2">
+                    <button type="button" class="btn btn-sm btn-outline-light" data-bs-toggle="offcanvas" data-bs-target="#carrito">Ver carrito</button>
+                    <a href="pago.html" class="btn btn-sm btn-primary">Comprar ya</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de aviso: compra, registro, inicio de sesión, mensajes... -->
+    <div class="modal fade modal-aviso" id="modalAviso" tabindex="-1" aria-labelledby="tituloAviso" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="icono"><i class="bi bi-check-lg" aria-hidden="true"></i></div>
+                    <h2 class="modal-title" id="tituloAviso">Hecho</h2>
+                    <p class="mensaje texto mb-0"></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">Cerrar</button>
+                    <a href="#" class="btn btn-primary accion d-none">Continuar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

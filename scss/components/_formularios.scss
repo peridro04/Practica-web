@@ -1,0 +1,65 @@
+// ==========================================================
+// Formularios
+// ==========================================================
+
+.form-label {
+    color: $gris;
+    font-size: 1rem;
+    font-weight: 700;
+    letter-spacing: .5px;
+}
+
+.form-control,
+.form-select {
+    font-size: 1.2rem;
+}
+
+.form-floating > label {
+    color: $gris;
+}
+
+.form-check-label {
+    color: $texto;
+}
+
+// Caja oscura que contiene un formulario
+.formulario {
+    @include caja;
+    padding: 2rem;
+
+    @include media-breakpoint-down(md) {
+        padding: 1.25rem;
+    }
+}
+
+// Opciones tipo tarjeta (envío, pago, tallas)
+.opcion {
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+    width: 100%;
+    padding: 1rem 1.25rem;
+    border: 1px solid $borde;
+    border-radius: $border-radius;
+    cursor: pointer;
+    transition: border-color .2s, background-color .2s;
+
+    i {
+        color: $rojo;
+        font-size: 1.5rem;
+    }
+
+    .precio-opcion {
+        margin-left: auto;
+        font-weight: 800;
+    }
+}
+
+.btn-check:checked + .opcion {
+    border-color: $rojo;
+    background-color: rgba($rojo, .1);
+}
+
+.btn-check:focus-visible + .opcion {
+    box-shadow: $input-focus-box-shadow;
+}

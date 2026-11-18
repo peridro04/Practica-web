@@ -1,0 +1,40 @@
+// ==========================================================
+// PJG Fitness - Hoja de estilos principal
+// Se compila a un único fichero: css/style.css
+//   npm run build   (o npm run watch mientras se trabaja)
+// ==========================================================
+
+// 1. Configuración: variables de la marca y tema de Bootstrap
+@import "abstracts/variables";
+@import "abstracts/tema-bootstrap";
+
+// 2. Librerías: Bootstrap 5 e iconos de Bootstrap
+@import "bootstrap/scss/bootstrap";
+$bootstrap-icons-font-dir: "../fonts";
+@import "bootstrap-icons/font/bootstrap-icons";
+
+// 3. Mixins propios (pueden usar los de Bootstrap)
+@import "abstracts/mixins";
+
+// 4. Base: estilos generales y animaciones
+@import "base/base";
+@import "base/animaciones";
+
+// 5. Estructura común a todas las páginas
+@import "layout/navbar";
+@import "layout/footer";
+
+// 6. Componentes reutilizables
+@import "components/botones";
+@import "components/tarjetas";
+@import "components/slider";
+@import "components/carrito";
+@import "components/formularios";
+
+// 7. Estilos de cada página
+@import "pages/inicio";
+@import "pages/tienda";
+@import "pages/producto";
+@import "pages/novedades";
+@import "pages/cuenta";
+@import "pages/pago";

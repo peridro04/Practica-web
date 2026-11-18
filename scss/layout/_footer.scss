@@ -1,0 +1,90 @@
+// ==========================================================
+// Footer común con licencia Creative Commons
+// ==========================================================
+
+.footer-pjg {
+    margin-top: auto;
+    padding: 3.5rem 0 1.5rem;
+    background-color: $tarjeta;
+    border-top: 3px solid $rojo;
+    color: $gris;
+    font-size: 1.15rem;
+
+    .marca {
+        color: $texto;
+        font-size: 2rem;
+        font-weight: 800;
+
+        i {
+            color: $rojo;
+        }
+    }
+
+    h2 {
+        margin-bottom: 1rem;
+        color: $texto;
+        font-size: 1.3rem;
+        letter-spacing: 1px;
+    }
+
+    ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+
+        li + li {
+            margin-top: .35rem;
+        }
+    }
+
+    a {
+        color: $gris;
+
+        &:hover {
+            color: $texto;
+        }
+    }
+
+    .redes a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 42px;
+        height: 42px;
+        border: 1px solid $borde;
+        border-radius: 50%;
+        color: $texto;
+        font-size: 1.2rem;
+        transition: background-color .2s, border-color .2s;
+
+        &:hover {
+            background-color: $rojo;
+            border-color: $rojo;
+        }
+    }
+
+    .licencia {
+        margin-top: 2.5rem;
+        padding-top: 1.5rem;
+        border-top: 1px solid $borde;
+        font-size: 1rem;
+        text-align: center;
+
+        a {
+            color: $texto;
+            text-decoration: underline;
+        }
+    }
+
+    .iconos-cc {
+        display: flex;
+        justify-content: center;
+        gap: 6px;
+        margin-top: .5rem;
+
+        img {
+            width: 22px;
+            height: 22px;
+        }
+    }
+}

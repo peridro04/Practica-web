@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="es" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Finaliza tu compra en PJG Fitness.">
+    <title>Finalizar compra | PJG Fitness</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+    <!-- Único CSS de la web: Bootstrap + estilos propios compilados con SASS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body data-raiz="">
+    <!-- Navbar fija y común a todas las páginas -->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-pjg" data-bs-theme="dark" aria-label="Navegación principal">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><i class="bi bi-lightning-charge-fill" aria-hidden="true"></i>PJG FITNESS</a>
+            <div class="acciones order-lg-last">
+                <a href="login.html" class="btn btn-icono" aria-label="Mi cuenta"><i class="bi bi-person" aria-hidden="true"></i><span class="nombre-usuario d-none d-sm-inline">Entrar</span></a>
+                <button class="btn btn-primary btn-carrito" type="button" data-bs-toggle="offcanvas" data-bs-target="#carrito" aria-controls="carrito" aria-label="Abrir carrito">
+                    <i class="bi bi-bag" aria-hidden="true"></i>
+                    <span class="badge rounded-pill contador-carrito">0</span>
+                </button>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Abrir menú">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="tienda.html">Tienda</a></li>
+                    <li class="nav-item"><a class="nav-link" href="novedades.html">Novedades <span class="badge text-bg-primary ms-1">Nuevo</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#contacto">Contacto</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section class="cabecera-pagina">
+            <div class="container">
+                <nav aria-label="Migas de pan">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="index.html">Inicio</a></li>
+                        <li class="breadcrumb-item"><a href="tienda.html">Tienda</a></li>
+                        <li class="breadcrumb-item active" aria-current="page">Pago</li>
+                    </ol>
+                </nav>
+                <div class="d-flex flex-wrap justify-content-between align-items-end gap-3">
+                    <h1 class="titulo mb-0">Finalizar compra</h1>
+                    <ol class="pasos">
+                        <li class="hecho"><span><i class="bi bi-check" aria-hidden="true"></i></span>Carrito</li>
+                        <li class="actual"><span>2</span>Datos y pago</li>
+                        <li><span>3</span>Confirmación</li>
+                    </ol>
+                </div>
+            </div>
+        </section>
+
+        <section class="seccion pt-4">
+            <div class="container">
+                <div class="row g-4">
+                    <div class="col-lg-7">
+                        <form class="needs-validation" data-form="pago" id="formPago" novalidate>
+                            <div class="bloque-pago">
+                                <h2><span>1</span>Contacto</h2>
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label for="pagoEmail" class="form-label">Correo electrónico</label>
+                                        <input type="email" class="form-control" id="pagoEmail" autocomplete="email" required>
+                                        <div class="invalid-feedback">Escribe un correo válido.</div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="pagoTelefono" class="form-label">Teléfono</label>
+                                        <input type="tel" class="form-control" id="pagoTelefono" autocomplete="tel" pattern="[0-9 +]{9,15}" placeholder="600 000 000" required>
+                                        <div class="invalid-feedback">Escribe un teléfono válido.</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="bloque-pago">
+                                <h2><span>2</span>Dirección de envío</h2>
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label for="pagoNombre" class="form-label">Nombre</label>
+                                        <input type="text" class="form-control" id="pagoNombre" autocomplete="given-name" required>
+                                        <div class="invalid-feedback">Falta el nombre.</div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="pagoApellidos" class="form-label">Apellidos</label>
+                                        <input type="text" class="form-control" id="pagoApellidos" autocomplete="family-name" required>
+                                        <div class="invalid-feedback">Faltan los apellidos.</div>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="pagoDireccion" class="form-label">Dirección</label>
+                                        <input type="text" class="form-control" id="pagoDireccion" autocomplete="street-address" placeholder="Calle, número, piso" required>
+                                        <div class="invalid-feedback">Falta la dirección.</div>
+                                    </div>
+                                    <div class="col-md-5">
+                                        <label for="pagoCiudad" class="form-label">Ciudad</label>
+                                        <input type="text" class="form-control" id="pagoCiudad" autocomplete="address-level2" required>
+                                        <div class="invalid-feedback">Falta la ciudad.</div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label for="pagoProvincia" class="form-label">Provincia</label>
+                                        <select class="form-select" id="pagoProvincia" required>
+                                            <option value="">Elige...</option>
+                                            <option>Almería</option><option>Cádiz</option><option>Córdoba</option><option>Granada</option>
+                                            <option>Huelva</option><option>Jaén</option><option>Málaga</option><option>Sevilla</option>
+                                            <option>Madrid</option><option>Barcelona</option><option>Valencia</option><option>Otra</option>
+                                        </select>
+                                        <div class="invalid-feedback">Elige una provincia.</div>
+                                    </div>
+                                    <div class="col-md-3">
+                                        <label for="pagoCP" class="form-label">Código postal</label>
+                                        <input type="text" class="form-control" id="pagoCP" autocomplete="postal-code" pattern="[0-9]{5}" inputmode="numeric" required>
+                                        <div class="invalid-feedback">5 números.</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="bloque-pago">
+                                <h2><span>3</span>Envío</h2>
+                                <div class="d-grid gap-2">
+                                    <input type="radio" class="btn-check" name="envio" id="envioEstandar" value="estandar" checked>
+                                    <label class="opcion" for="envioEstandar"><i class="bi bi-truck" aria-hidden="true"></i><span><strong>Estándar</strong><br><small class="text-body-secondary">24/48 h · gratis desde 50 €</small></span><span class="precio-opcion" id="precioEstandar">3,90 €</span></label>
+                                    <input type="radio" class="btn-check" name="envio" id="envioExpress" value="express">
+                                    <label class="opcion" for="envioExpress"><i class="bi bi-lightning-charge" aria-hidden="true"></i><span><strong>Express</strong><br><small class="text-body-secondary">Mañana antes de las 14:00</small></span><span class="precio-opcion">5,90 €</span></label>
+                                </div>
+                            </div>
+
+                            <div class="bloque-pago">
+                                <h2><span>4</span>Pago</h2>
+                                <div class="row g-2 mb-3">
+                                    <div class="col-sm-4">
+                                        <input type="radio" class="btn-check" name="metodo" id="metodoTarjeta" value="tarjeta" checked>
+                                        <label class="opcion justify-content-center" for="metodoTarjeta"><i class="bi bi-credit-card" aria-hidden="true"></i>Tarjeta</label>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <input type="radio" class="btn-check" name="metodo" id="metodoPaypal" value="paypal">
+                                        <label class="opcion justify-content-center" for="metodoPaypal"><i class="bi bi-paypal" aria-hidden="true"></i>PayPal</label>
+                                    </div>
+                                    <div class="col-sm-4">
+                                        <input type="radio" class="btn-check" name="metodo" id="metodoBizum" value="bizum">
+                                        <label class="opcion justify-content-center" for="metodoBizum"><i class="bi bi-phone" aria-hidden="true"></i>Bizum</label>
+                                    </div>
+                                </div>
+                                <div class="row g-3" id="datosTarjeta">
+                                    <div class="col-12">
+                                        <label for="tarjetaNombre" class="form-label">Titular de la tarjeta</label>
+                                        <input type="text" class="form-control" id="tarjetaNombre" autocomplete="cc-name" required>
+                                        <div class="invalid-feedback">Falta el titular.</div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="tarjetaNumero" class="form-label">Número</label>
+                                        <input type="text" class="form-control" id="tarjetaNumero" autocomplete="cc-number" inputmode="numeric" pattern="[0-9 ]{16,19}" placeholder="0000 0000 0000 0000" required>
+                                        <div class="invalid-feedback">16 números.</div>
+                                    </div>
+                                    <div class="col-6 col-md-3">
+                                        <label for="tarjetaCaducidad" class="form-label">Caducidad</label>
+                                        <input type="text" class="form-control" id="tarjetaCaducidad" autocomplete="cc-exp" pattern="(0[1-9]|1[0-2])/[0-9]{2}" placeholder="MM/AA" required>
+                                        <div class="invalid-feedback">MM/AA</div>
+                                    </div>
+                                    <div class="col-6 col-md-3">
+                                        <label for="tarjetaCvv" class="form-label">CVV</label>
+                                        <input type="text" class="form-control" id="tarjetaCvv" autocomplete="cc-csc" inputmode="numeric" pattern="[0-9]{3}" placeholder="123" required>
+                                        <div class="invalid-feedback">3 números.</div>
+                                    </div>
+                                </div>
+                                <p class="form-text mt-3 mb-0"><i class="bi bi-lock-fill" aria-hidden="true"></i> Página de práctica: no se cobra nada ni se guardan los datos.</p>
+                            </div>
+
+                            <div class="form-check my-4">
+                                <input class="form-check-input" type="checkbox" id="pagoCondiciones" required>
+                                <label class="form-check-label" for="pagoCondiciones">He leído y acepto las condiciones de compra</label>
+                                <div class="invalid-feedback">Tienes que aceptarlas para comprar.</div>
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-lg w-100" id="btnPagar">Pagar</button>
+                        </form>
+                    </div>
+
+                    <div class="col-lg-5">
+                        <aside class="resumen" id="resumenPago" aria-labelledby="tituloResumen">
+                            <h2 id="tituloResumen">Tu pedido</h2>
+                            <ul class="list-unstyled mb-3" id="resumenProductos"></ul>
+                            <label for="codigo" class="form-label">Código de descuento</label>
+                            <div class="input-group has-validation mb-3">
+                                <input type="text" class="form-control" id="codigo" placeholder="IRON10">
+                                <button class="btn btn-outline-light" type="button" id="aplicarCodigo">Aplicar</button>
+                                <div class="invalid-feedback">Ese código no existe.</div>
+                                <div class="valid-feedback">Código aplicado.</div>
+                            </div>
+                            <ul class="lineas">
+                                <li class="linea"><span>Subtotal</span><span id="pagoSubtotal">0,00 €</span></li>
+                                <li class="linea d-none" id="filaDescuento"><span>Descuento <span id="nombreCodigo"></span></span><span id="pagoDescuento" class="text-primary">0,00 €</span></li>
+                                <li class="linea"><span>Envío</span><span id="pagoEnvio">Gratis</span></li>
+                                <li class="linea linea-total"><span>Total</span><span id="pagoTotal">0,00 €</span></li>
+                            </ul>
+                            <a href="tienda.html" class="btn btn-link link-light w-100 mt-2"><i class="bi bi-arrow-left" aria-hidden="true"></i> Seguir comprando</a>
+                        </aside>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer común -->
+    <footer class="footer-pjg">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <p class="marca"><i class="bi bi-lightning-charge-fill" aria-hidden="true"></i> PJG FITNESS</p>
+                    <p>Suplementación directa, prendas resistentes y el material que necesitas para llevar cada sesión al límite.</p>
+                    <div class="redes d-flex gap-2">
+                        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                        <a href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+                        <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h2>Tienda</h2>
+                    <ul>
+                        <li><a href="tienda.html?cat=suplementacion">Suplementación</a></li>
+                        <li><a href="tienda.html?cat=equipamiento">Equipamiento</a></li>
+                        <li><a href="tienda.html?cat=merch">Merch</a></li>
+                        <li><a href="novedades.html">Iron Series</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h2>Mi cuenta</h2>
+                    <ul>
+                        <li><a href="login.html">Iniciar sesión</a></li>
+                        <li><a href="registro.html">Crear cuenta</a></li>
+                        <li><a href="pago.html">Finalizar compra</a></li>
+                        <li><a href="index.html#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h2>Newsletter</h2>
+                    <p>Entérate antes que nadie de los lanzamientos y llévate un 10 % de descuento.</p>
+                    <form class="needs-validation" data-form="newsletter" novalidate>
+                        <div class="input-group has-validation">
+                            <label for="emailNews" class="visually-hidden">Correo electrónico</label>
+                            <input type="email" class="form-control" id="emailNews" placeholder="tucorreo@ejemplo.com" required>
+                            <button class="btn btn-primary" type="submit">Unirme</button>
+                            <div class="invalid-feedback">Escribe un correo válido.</div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="licencia">
+                <p class="mb-0">
+                    &copy; <span class="anio">2026</span> <a href="index.html">PJG Fitness</a> por Pedro Jurado Gavilán está bajo licencia
+                    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" target="_blank" rel="license noopener noreferrer">CC BY-NC-SA 4.0</a>
+                </p>
+                <p class="iconos-cc">
+                    <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt="Creative Commons">
+                    <img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt="Atribución">
+                    <img src="https://mirrors.creativecommons.org/presskit/icons/nc.svg" alt="No comercial">
+                    <img src="https://mirrors.creativecommons.org/presskit/icons/sa.svg" alt="Compartir igual">
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Carrito lateral (offcanvas de Bootstrap) -->
+    <div class="offcanvas offcanvas-end offcanvas-carrito" tabindex="-1" id="carrito" aria-labelledby="tituloCarrito">
+        <div class="offcanvas-header">
+            <h2 class="offcanvas-title" id="tituloCarrito">Tu carrito</h2>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Cerrar carrito"></button>
+        </div>
+        <div class="offcanvas-body" id="listaCarrito"></div>
+        <div class="offcanvas-footer">
+            <p class="total"><span>Total</span><span id="totalCarrito">0,00 €</span></p>
+            <a href="pago.html" class="btn btn-primary btn-lg w-100" id="btnFinalizar">Finalizar compra</a>
+        </div>
+    </div>
+
+    <!-- Aviso al añadir un producto (toast de Bootstrap) -->
+    <div class="toast-container position-fixed end-0 p-3">
+        <div id="toastCarrito" class="toast" role="status" aria-live="polite" aria-atomic="true">
+            <div class="toast-header">
+                <i class="bi bi-bag-check-fill text-primary me-2" aria-hidden="true"></i>
+                <strong class="me-auto">Carrito</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Cerrar"></button>
+            </div>
+            <div class="toast-body">
+                <span></span>
+                <div class="mt-2 d-flex gap-2">
+                    <button type="button" class="btn btn-sm btn-outline-light" data-bs-toggle="offcanvas" data-bs-target="#carrito">Ver carrito</button>
+                    <a href="pago.html" class="btn btn-sm btn-primary">Comprar ya</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de aviso: compra, registro, inicio de sesión, mensajes... -->
+    <div class="modal fade modal-aviso" id="modalAviso" tabindex="-1" aria-labelledby="tituloAviso" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="icono"><i class="bi bi-check-lg" aria-hidden="true"></i></div>
+                    <h2 class="modal-title" id="tituloAviso">Hecho</h2>
+                    <p class="mensaje texto mb-0"></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">Cerrar</button>
+                    <a href="#" class="btn btn-primary accion d-none">Continuar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,98 @@
+// ==========================================================
+// Ficha de producto
+// ==========================================================
+
+.foto-grande {
+    position: relative;
+
+    img {
+        @include imagen-cubre(480px);
+        border-radius: $radio;
+
+        @include media-breakpoint-down(lg) {
+            height: 380px;
+        }
+
+        @include media-breakpoint-down(md) {
+            height: 280px;
+        }
+    }
+
+    .badge {
+        position: absolute;
+        left: 20px;
+        top: 20px;
+        font-size: 1.1rem;
+    }
+}
+
+.ficha {
+    h1 {
+        font-size: clamp(2.6rem, 5vw, 3.6rem);
+    }
+
+    .valoracion {
+        color: #f5b301;
+        font-size: 1.1rem;
+
+        span {
+            color: $gris;
+            margin-left: .4rem;
+        }
+    }
+
+    .precio-grande {
+        color: $rojo;
+        font-size: 2.8rem;
+        font-weight: 800;
+        line-height: 1;
+    }
+
+    .tallas .btn {
+        min-width: 56px;
+    }
+
+    .ventajas-compra {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        color: $gris;
+
+        li + li {
+            margin-top: .35rem;
+        }
+
+        i {
+            color: $rojo;
+            margin-right: .5rem;
+        }
+    }
+}
+
+.pestanas {
+    .nav-tabs {
+        --bs-nav-tabs-link-active-bg: #{$tarjeta};
+        --bs-nav-tabs-link-active-color: #{$texto};
+        --bs-nav-link-color: #{$gris};
+        --bs-nav-link-hover-color: #{$texto};
+        font-weight: 700;
+    }
+
+    .tab-content {
+        @include caja;
+        border-top-left-radius: 0;
+        border-top: 0;
+        padding: 2rem;
+        color: $gris;
+    }
+
+    h2 {
+        color: $texto;
+        font-size: 2rem;
+    }
+
+    .table {
+        --bs-table-bg: transparent;
+        margin: 0;
+    }
+}

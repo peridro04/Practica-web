@@ -1,0 +1,107 @@
+// ==========================================================
+// Tarjeta de producto (tienda, novedades y relacionados)
+// Toda la tarjeta es un enlace gracias a .stretched-link
+// ==========================================================
+
+.producto {
+    overflow: hidden;
+    transition: transform .3s, box-shadow .3s, border-color .3s;
+
+    .foto {
+        position: relative;
+        overflow: hidden;
+
+        img {
+            @include imagen-cubre(240px);
+            transition: transform .4s;
+        }
+    }
+
+    .etiqueta-foto {
+        position: absolute;
+        left: 14px;
+        top: 14px;
+        font-size: 1rem;
+        letter-spacing: 1px;
+    }
+
+    .badge-nuevo {
+        position: absolute;
+        right: 14px;
+        top: 14px;
+        font-size: 1rem;
+    }
+
+    .card-body {
+        display: flex;
+        flex-direction: column;
+        padding: 1.25rem;
+    }
+
+    .card-title {
+        margin-bottom: .4rem;
+        font-size: 1.75rem;
+
+        a {
+            color: $texto;
+            transition: color .2s;
+        }
+    }
+
+    .card-text {
+        color: $gris;
+    }
+
+    .pie {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: .75rem;
+        margin-top: auto;
+        padding-top: 1rem;
+    }
+
+    // El botón queda por encima del enlace que cubre la tarjeta
+    .btn-anadir {
+        position: relative;
+        z-index: 2;
+    }
+
+    &:hover,
+    &:focus-within {
+        @include elevar;
+        border-color: rgba($rojo, .5);
+
+        .foto img {
+            transform: scale(1.06);
+        }
+
+        .card-title a {
+            color: $rojo;
+        }
+    }
+}
+
+// Tarjetas pequeñas de ventajas / características
+.ventaja {
+    @include caja;
+    height: 100%;
+    padding: 1.5rem;
+
+    i {
+        display: inline-block;
+        margin-bottom: .5rem;
+        color: $rojo;
+        font-size: 2rem;
+    }
+
+    h3 {
+        font-size: 1.4rem;
+        margin-bottom: .25rem;
+    }
+
+    p {
+        margin: 0;
+        color: $gris;
+    }
+}

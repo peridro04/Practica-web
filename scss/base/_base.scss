@@ -1,0 +1,90 @@
+// ==========================================================
+// Estilos generales
+// ==========================================================
+
+html {
+    // Los enlaces a anclas (#contacto) no quedan tapados por la navbar fija
+    scroll-padding-top: $altura-nav + 16px;
+}
+
+body {
+    // Hueco para la navbar fija (fixed-top)
+    padding-top: $altura-nav;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1 0 auto;
+}
+
+a {
+    text-decoration: none;
+}
+
+img,
+video {
+    max-width: 100%;
+}
+
+h1, h2, h3, h4, h5,
+.etiqueta, .btn, .nav-link, .navbar-brand,
+.badge, .breadcrumb, .form-label, .nav-tabs .nav-link {
+    text-transform: uppercase;
+}
+
+.etiqueta {
+    color: $rojo;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    margin-bottom: .5rem;
+}
+
+.titulo {
+    font-size: clamp(2.2rem, 4vw, 2.9rem);
+    line-height: 1;
+    margin-bottom: .75rem;
+}
+
+.texto {
+    color: $gris;
+    font-size: 1.2rem;
+}
+
+.precio {
+    color: $rojo;
+    font-size: 1.6rem;
+    font-weight: 800;
+    white-space: nowrap;
+}
+
+.precio-antes {
+    color: $gris;
+    font-size: 1.1rem;
+    text-decoration: line-through;
+}
+
+// Separación vertical de las secciones
+.seccion {
+    padding: 4.5rem 0;
+
+    @include media-breakpoint-down(md) {
+        padding: 3rem 0;
+    }
+}
+
+.seccion-oscura {
+    background-color: $tarjeta;
+}
+
+// Cabecera de página con migas de pan
+.cabecera-pagina {
+    padding: 3rem 0 1rem;
+
+    .breadcrumb {
+        font-size: 1rem;
+        font-weight: 700;
+    }
+}

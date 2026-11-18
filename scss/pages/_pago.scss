@@ -1,0 +1,106 @@
+// ==========================================================
+// Página de pago
+// ==========================================================
+
+.pasos {
+    display: flex;
+    gap: 1.5rem;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: $gris;
+
+    li {
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+    }
+
+    span {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 28px;
+        height: 28px;
+        border-radius: 50%;
+        border: 1px solid $borde;
+    }
+
+    .hecho span {
+        background-color: $rojo;
+        border-color: $rojo;
+        color: $texto;
+    }
+
+    .actual {
+        color: $texto;
+    }
+}
+
+.bloque-pago {
+    @include caja;
+    padding: 1.75rem;
+
+    + .bloque-pago {
+        margin-top: 1.5rem;
+    }
+
+    h2 {
+        display: flex;
+        align-items: center;
+        gap: .6rem;
+        margin-bottom: 1.25rem;
+        font-size: 1.7rem;
+
+        span {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            background-color: $rojo;
+            font-size: 1.2rem;
+        }
+    }
+}
+
+.resumen {
+    @include caja;
+    padding: 1.75rem;
+
+    @include media-breakpoint-up(lg) {
+        position: sticky;
+        top: $altura-nav + 24px;
+    }
+
+    h2 {
+        font-size: 1.7rem;
+    }
+
+    .lineas {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .linea {
+        display: flex;
+        justify-content: space-between;
+        padding: .3rem 0;
+        color: $gris;
+    }
+
+    .linea-total {
+        margin-top: .5rem;
+        padding-top: .75rem;
+        border-top: 1px solid $borde;
+        color: $texto;
+        font-size: 1.6rem;
+        font-weight: 800;
+        text-transform: uppercase;
+    }
+}

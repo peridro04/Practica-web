@@ -1,0 +1,116 @@
+// ==========================================================
+// Navbar fija y común a todas las páginas
+// ==========================================================
+
+.navbar-pjg {
+    min-height: $altura-nav;
+    background-color: rgba($fondo, .94);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid $borde;
+
+    .navbar-brand {
+        display: flex;
+        align-items: center;
+        gap: .4rem;
+        font-size: 1.9rem;
+        font-weight: 800;
+        letter-spacing: 1px;
+
+        i {
+            color: $rojo;
+        }
+
+        @include media-breakpoint-down(sm) {
+            font-size: 1.45rem;
+            margin-right: 0;
+        }
+    }
+
+    // En el móvil los botones son más compactos para que quepan en una línea
+    @include media-breakpoint-down(sm) {
+        .acciones {
+            gap: .35rem;
+        }
+
+        .btn-icono,
+        .btn-carrito,
+        .navbar-toggler {
+            padding: .35rem .6rem;
+        }
+    }
+
+    .nav-link {
+        position: relative;
+        font-size: 1.2rem;
+        font-weight: 700;
+        letter-spacing: 1px;
+
+        @include media-breakpoint-up(lg) {
+            padding-left: 1rem;
+            padding-right: 1rem;
+        }
+
+        // Rayita roja bajo la página en la que estás
+        &.active::after {
+            content: "";
+            position: absolute;
+            left: 1rem;
+            right: 1rem;
+            bottom: 2px;
+            height: 3px;
+            border-radius: 2px;
+            background-color: $rojo;
+
+            @include media-breakpoint-down(lg) {
+                left: 0;
+                right: auto;
+                width: 32px;
+            }
+        }
+    }
+
+    .acciones {
+        display: flex;
+        align-items: center;
+        gap: .5rem;
+    }
+
+    .btn-icono {
+        display: inline-flex;
+        align-items: center;
+        gap: .35rem;
+        color: $texto;
+        font-size: 1.1rem;
+        font-weight: 700;
+        border: 1px solid $borde;
+
+        i {
+            font-size: 1.25rem;
+        }
+
+        &:hover {
+            border-color: $rojo;
+            color: $texto;
+        }
+    }
+
+    .btn-carrito {
+        position: relative;
+    }
+
+    .contador-carrito {
+        position: absolute;
+        top: -8px;
+        right: -8px;
+        min-width: 22px;
+        font-size: .85rem;
+        background-color: $texto;
+        color: $fondo;
+    }
+
+    .navbar-collapse {
+        @include media-breakpoint-down(lg) {
+            padding: .75rem 0 1rem;
+        }
+    }
+}

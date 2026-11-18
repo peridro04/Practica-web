@@ -1,0 +1,67 @@
+// ==========================================================
+// Inicio de sesión y registro
+// ==========================================================
+
+.cuenta {
+    padding: 4rem 0;
+
+    .panel {
+        overflow: hidden;
+        @include caja;
+    }
+
+    // Foto lateral con mensaje de la marca
+    .lateral {
+        position: relative;
+        min-height: 100%;
+        padding: 2.5rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        // La foto se pone en el HTML (style) porque cambia en cada página
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        h2 {
+            font-size: 2.6rem;
+        }
+
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            color: $texto;
+
+            i {
+                color: $rojo;
+                margin-right: .5rem;
+            }
+        }
+    }
+
+    .contenido {
+        padding: 2.5rem;
+
+        @include media-breakpoint-down(md) {
+            padding: 1.5rem;
+        }
+    }
+
+    .separador {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        color: $gris;
+        font-size: 1rem;
+        text-transform: uppercase;
+
+        &::before,
+        &::after {
+            content: "";
+            flex: 1;
+            height: 1px;
+            background-color: $borde;
+        }
+    }
+}

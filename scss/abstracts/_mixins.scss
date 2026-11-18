@@ -1,0 +1,24 @@
+// ==========================================================
+// Mixins propios
+// ==========================================================
+
+// Tarjeta oscura con borde suave
+@mixin caja {
+    background-color: $tarjeta;
+    border: 1px solid $borde;
+    border-radius: $radio;
+}
+
+// Efecto de elevar al pasar el ratón
+@mixin elevar($distancia: 6px) {
+    transform: translateY(-$distancia);
+    box-shadow: 0 10px 24px rgba($rojo, .25);
+}
+
+// Imagen que rellena su caja
+@mixin imagen-cubre($alto) {
+    display: block;
+    width: 100%;
+    height: $alto;
+    object-fit: cover;
+}

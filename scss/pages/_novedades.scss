@@ -1,0 +1,98 @@
+// ==========================================================
+// Novedades: colección Iron Series
+// ==========================================================
+
+.hero-iron {
+    padding: 4.5rem 0;
+    background: radial-gradient(circle at 80% 20%, #3a0c0f, $fondo 60%);
+
+    h1 {
+        font-size: clamp(3.2rem, 7vw, 5rem);
+        line-height: .9;
+    }
+}
+
+// Cuenta atrás de la oferta de lanzamiento
+.cuenta-atras {
+    display: flex;
+    gap: .75rem;
+
+    div {
+        @include caja;
+        min-width: 78px;
+        padding: .6rem .5rem;
+        text-align: center;
+    }
+
+    strong {
+        display: block;
+        color: $texto;
+        font-size: 2.2rem;
+        line-height: 1;
+    }
+
+    span {
+        color: $gris;
+        font-size: .95rem;
+        text-transform: uppercase;
+    }
+}
+
+.codigo-promo {
+    display: inline-block;
+    padding: .2rem .8rem;
+    border: 2px dashed $rojo;
+    border-radius: $border-radius;
+    color: $texto;
+    font-weight: 800;
+    letter-spacing: 2px;
+}
+
+// Carrusel de Bootstrap con los productos nuevos
+.carrusel-iron {
+    overflow: hidden;
+    border-radius: $radio;
+    border: 1px solid $borde;
+
+    .carousel-item img {
+        @include imagen-cubre(460px);
+        filter: brightness(.7);
+
+        @include media-breakpoint-down(md) {
+            height: 300px;
+        }
+    }
+
+    .carousel-item::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(transparent 35%, rgba($fondo, .9));
+    }
+
+    .carousel-caption {
+        z-index: 1;
+        left: 8%;
+        right: 8%;
+        bottom: 2.5rem;
+        text-align: left;
+
+        .texto {
+            color: $texto;
+        }
+
+        h3 {
+            font-size: clamp(2rem, 4vw, 3rem);
+        }
+    }
+}
+
+.creditos {
+    color: $gris;
+    font-size: .95rem;
+
+    a {
+        color: $gris;
+        text-decoration: underline;
+    }
+}

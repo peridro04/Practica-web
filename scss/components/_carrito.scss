@@ -1,0 +1,131 @@
+// ==========================================================
+// Carrito lateral (offcanvas), selector de cantidad y aviso
+// ==========================================================
+
+.offcanvas-carrito {
+    --bs-offcanvas-width: 420px;
+
+    .offcanvas-title {
+        font-size: 1.8rem;
+    }
+
+    .offcanvas-footer {
+        padding: 1rem 1.5rem 1.5rem;
+        border-top: 1px solid $borde;
+    }
+
+    .total {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 1rem;
+        font-size: 1.5rem;
+        font-weight: 800;
+        text-transform: uppercase;
+    }
+}
+
+.item-carrito {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 0;
+    border-bottom: 1px solid $borde;
+
+    img {
+        width: 72px;
+        height: 72px;
+        flex-shrink: 0;
+        object-fit: cover;
+        border-radius: $border-radius;
+    }
+
+    .datos {
+        flex: 1;
+        min-width: 0;
+    }
+
+    .nombre {
+        display: block;
+        color: $texto;
+        font-size: 1.2rem;
+        font-weight: 700;
+        line-height: 1.1;
+        text-transform: uppercase;
+    }
+
+    .extra {
+        color: $gris;
+        font-size: 1rem;
+    }
+
+    .controles {
+        display: flex;
+        align-items: center;
+        gap: .4rem;
+        margin-top: .35rem;
+
+        .btn {
+            padding: 0 .55rem;
+            line-height: 1.6;
+        }
+    }
+}
+
+.carrito-vacio {
+    padding: 3rem 1rem;
+    color: $gris;
+    text-align: center;
+
+    i {
+        display: block;
+        margin-bottom: .5rem;
+        color: $rojo;
+        font-size: 3rem;
+    }
+}
+
+.selector-cantidad {
+    max-width: 150px;
+
+    .form-control {
+        text-align: center;
+        font-weight: 700;
+    }
+}
+
+// Ventana de aviso (modal) para compras, registros, etc.
+.modal-aviso {
+    .modal-body {
+        padding: 2.5rem 2rem 1.5rem;
+        text-align: center;
+    }
+
+    .icono {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 84px;
+        height: 84px;
+        margin-bottom: 1rem;
+        border-radius: 50%;
+        background-color: rgba($rojo, .15);
+        color: $rojo;
+        font-size: 2.8rem;
+    }
+
+    .modal-title {
+        font-size: 2.2rem;
+        margin-bottom: .5rem;
+    }
+
+    .modal-footer {
+        justify-content: center;
+        border-top: 0;
+        padding-bottom: 2rem;
+    }
+}
+
+.toast-container {
+    // La notificación aparece justo debajo de la navbar
+    top: $altura-nav + 8px !important;
+}

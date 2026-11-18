@@ -1,0 +1,106 @@
+// ==========================================================
+// Animaciones (práctica 7) reutilizadas en toda la web
+// ==========================================================
+
+@keyframes subir {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes pulso {
+    0% {
+        box-shadow: 0 0 0 0 rgba($rojo, .6);
+    }
+    70% {
+        box-shadow: 0 0 0 14px rgba($rojo, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba($rojo, 0);
+    }
+}
+
+// Cada foto del slider aparece, se queda y se desvanece (20 % de 20 s = 4 s).
+// visibility evita que una foto invisible capture los clics.
+@keyframes pasar {
+    0% {
+        opacity: 0;
+        visibility: hidden;
+    }
+    5% {
+        opacity: 1;
+        visibility: visible;
+    }
+    20% {
+        opacity: 1;
+        visibility: visible;
+    }
+    25% {
+        opacity: 0;
+        visibility: hidden;
+    }
+    100% {
+        opacity: 0;
+        visibility: hidden;
+    }
+}
+
+@keyframes llenar {
+    from {
+        width: 0;
+    }
+    to {
+        width: 100%;
+    }
+}
+
+// El número del carrito da un salto cuando cambia
+@keyframes rebote {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.35);
+    }
+}
+
+.rebote {
+    animation: rebote .4s ease-out;
+}
+
+// Elementos que suben al cargar la página
+.aparece {
+    animation: subir .8s ease-out backwards;
+}
+
+.aparece-2 {
+    animation-delay: .2s;
+}
+
+.aparece-3 {
+    animation-delay: .4s;
+}
+
+.aparece-4 {
+    animation-delay: .6s;
+}
+
+// Si el usuario prefiere menos movimiento, se quitan las animaciones
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation: none !important;
+        transition: none !important;
+    }
+
+    .diapositiva:first-child {
+        opacity: 1;
+        visibility: visible;
+    }
+}

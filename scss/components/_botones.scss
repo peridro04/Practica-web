@@ -1,0 +1,27 @@
+// ==========================================================
+// Botones (encima de los de Bootstrap)
+// ==========================================================
+
+.btn {
+    letter-spacing: .5px;
+    transition: color .2s, background-color .2s, border-color .2s, transform .2s, box-shadow .2s;
+
+    &:hover {
+        transform: translateY(-2px);
+    }
+
+    &:disabled,
+    &.disabled {
+        transform: none;
+    }
+}
+
+.btn-lg {
+    padding: .75rem 1.6rem;
+    font-size: 1.35rem;
+}
+
+// Botón principal que late para llamar la atención (portada)
+.btn-pulso {
+    animation: subir .8s ease-out .6s backwards, pulso 2s ease-out 1.6s infinite;
+}

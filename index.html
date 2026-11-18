@@ -1,165 +1,333 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" data-bs-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Suplementación, equipamiento y ropa para entrenar sin excusas.">
-    <title>PJG Fitness</title>
+    <title>PJG Fitness | Suplementación y equipamiento</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Alumni+Sans:wght@500;600;700;800&display=swap" rel="stylesheet">
     <link rel="icon" href="favicon.ico" type="image/x-icon">
-    <link rel="stylesheet" href="style.css">
+    <!-- Único CSS de la web: Bootstrap + estilos propios compilados con SASS -->
+    <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
-    <header class="header header-inicio">
-        <div class="contenedor">
-            <img src="img/logo.webp" alt="Logotipo PJG Suplementación" class="logo-img">
-            <p class="nombre">PJG FITNESS</p>
-            <a href="tienda.html">Tienda</a>
+<body data-raiz="">
+    <!-- Navbar fija y común a todas las páginas -->
+    <nav class="navbar navbar-expand-lg fixed-top navbar-pjg" data-bs-theme="dark" aria-label="Navegación principal">
+        <div class="container">
+            <a class="navbar-brand" href="index.html"><i class="bi bi-lightning-charge-fill" aria-hidden="true"></i>PJG FITNESS</a>
+            <div class="acciones order-lg-last">
+                <a href="login.html" class="btn btn-icono" aria-label="Mi cuenta"><i class="bi bi-person" aria-hidden="true"></i><span class="nombre-usuario d-none d-sm-inline">Entrar</span></a>
+                <button class="btn btn-primary btn-carrito" type="button" data-bs-toggle="offcanvas" data-bs-target="#carrito" aria-controls="carrito" aria-label="Abrir carrito">
+                    <i class="bi bi-bag" aria-hidden="true"></i>
+                    <span class="badge rounded-pill contador-carrito">0</span>
+                </button>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu" aria-controls="menu" aria-expanded="false" aria-label="Abrir menú">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </div>
+            <div class="collapse navbar-collapse" id="menu">
+                <ul class="navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link active" href="index.html" aria-current="page">Inicio</a></li>
+                    <li class="nav-item"><a class="nav-link" href="tienda.html">Tienda</a></li>
+                    <li class="nav-item"><a class="nav-link" href="novedades.html">Novedades <span class="badge text-bg-primary ms-1">Nuevo</span></a></li>
+                    <li class="nav-item"><a class="nav-link" href="index.html#contacto">Contacto</a></li>
+                </ul>
+            </div>
         </div>
-    </header>
+    </nav>
 
     <main>
         <section class="hero">
-            <div class="contenedor">
-                <p class="etiqueta">PJG / Train Hard</p>
-                <h1>Sin excusas.<br>Solo resultados.</h1>
-                <video autoplay muted loop playsinline poster="img/hero-poster.webp">
-                    <source src="video/hero.mp4" type="video/mp4">
-                </video>
-                <p class="texto">Suplementación directa, prendas resistentes y el material que necesitas para llevar cada sesión al límite.</p>
-                <a href="tienda.html" class="boton">Entrar en la tienda</a>
-            </div>
-        </section>
-
-        <section class="multimedia">
-            <div class="contenedor">
-                <p class="etiqueta">PJG / Mira y escucha</p>
-                <h2 class="titulo">Conoce nuestros productos</h2>
-                <video class="video-productos" controls preload="metadata" poster="img/productos-poster.webp">
-                    <source src="video/productos.mp4" type="video/mp4">
-                    Tu navegador no admite vídeo.
-                </video>
-                <div class="musica">
-                    <p class="texto">Música para entrenar</p>
-                    <audio controls loop preload="none">
-                        <source src="audio/ambiente.mp3" type="audio/mpeg">
-                        Tu navegador no admite audio.
-                    </audio>
+            <div class="container">
+                <div class="row align-items-center g-5">
+                    <div class="col-lg-5">
+                        <p class="etiqueta aparece">PJG / Train Hard</p>
+                        <h1 class="aparece aparece-2">Sin excusas.<br>Solo resultados.</h1>
+                        <p class="texto mt-3 aparece aparece-3">Suplementación directa, prendas resistentes y el material que necesitas para llevar cada sesión al límite.</p>
+                        <div class="d-flex flex-wrap gap-3 mt-4">
+                            <a href="tienda.html" class="btn btn-primary btn-lg btn-pulso">Entrar en la tienda</a>
+                            <a href="novedades.html" class="btn btn-outline-light btn-lg aparece aparece-4">Ver Iron Series</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-7">
+                        <video autoplay muted loop playsinline poster="img/hero-poster.webp" aria-label="Vídeo de entrenamiento PJG">
+                            <source src="video/hero.mp4" type="video/mp4">
+                        </video>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section class="destacados">
-            <div class="contenedor">
+        <section class="seccion pb-0">
+            <div class="container">
+                <div class="banner-iron">
+                    <span class="badge text-bg-primary mb-3">Lanzamiento</span>
+                    <h2>Nueva Iron Series</h2>
+                    <p class="texto mb-4">Kettlebells, mancuernas y straps para entrenar en casa como en el box.<br>−10 % durante el lanzamiento.</p>
+                    <a href="novedades.html" class="btn btn-primary btn-lg">Descubrir la colección <i class="bi bi-arrow-right" aria-hidden="true"></i></a>
+                </div>
+            </div>
+        </section>
+
+        <section class="seccion">
+            <div class="container">
                 <p class="etiqueta">PJG / Lo más pedido</p>
-                <h2 class="titulo">Productos destacados</h2>
+                <h2 class="titulo mb-4">Productos destacados</h2>
+                <!-- Slider solo con CSS (práctica 7): ahora cada foto lleva a su producto -->
                 <div class="slider">
-                    <div class="slide">
+                    <a class="diapositiva" href="productos/creatina.html">
                         <img src="img/creatina.webp" alt="Creatina Monohidrato">
-                        <p class="slide-texto">Creatina Monohidrato · 21,90 €</p>
-                    </div>
-                    <div class="slide">
+                        <p class="slide-texto">Creatina Monohidrato<span>21,90 €</span></p>
+                    </a>
+                    <a class="diapositiva" href="productos/proteina.html">
                         <img src="img/proteina.webp" alt="Proteina 2KG">
-                        <p class="slide-texto">Proteina 2KG · 54,90 €</p>
-                    </div>
-                    <div class="slide">
+                        <p class="slide-texto">Proteina 2KG<span>54,90 €</span></p>
+                    </a>
+                    <a class="diapositiva" href="productos/pre-entreno.html">
                         <img src="img/pre-entreno.webp" alt="Pre Entreno Duro">
-                        <p class="slide-texto">Pre Entreno Duro · 29,90 €</p>
-                    </div>
-                    <div class="slide">
+                        <p class="slide-texto">Pre Entreno Duro<span>29,90 €</span></p>
+                    </a>
+                    <a class="diapositiva" href="productos/sudadera.html">
                         <img src="img/sudadera.webp" alt="Sudadera PJG">
-                        <p class="slide-texto">Sudadera PJG · 44,90 €</p>
-                    </div>
-                    <div class="slide">
+                        <p class="slide-texto">Sudadera PJG<span>44,90 €</span></p>
+                    </a>
+                    <a class="diapositiva" href="productos/camiseta.html">
                         <img src="img/camiseta.webp" alt="Camiseta 2KG">
-                        <p class="slide-texto">Camiseta 2KG · 32,90 €</p>
-                    </div>
+                        <p class="slide-texto">Camiseta 2KG<span>32,90 €</span></p>
+                    </a>
                     <div class="progreso"></div>
                 </div>
             </div>
         </section>
 
-        <section class="categorias">
-            <div class="contenedor">
-                <h2 class="titulo">Equipa tu objetivo</h2>
-                <div class="lista-categorias">
-                    <a href="tienda.html" class="categoria clara">
-                        <img src="img/suplementacion.webp" alt="Persona echando polvo de proteína en un shaker">
-                        <div>
-                            <h3>Suplementación</h3>
-                            <p>Proteína · Energía · Recuperación</p>
+        <section class="seccion seccion-oscura">
+            <div class="container">
+                <div class="row g-4 align-items-center">
+                    <div class="col-lg-7">
+                        <video class="video-productos" controls preload="metadata" poster="img/productos-poster.webp">
+                            <source src="video/productos.mp4" type="video/mp4">
+                            Tu navegador no admite vídeo.
+                        </video>
+                    </div>
+                    <div class="col-lg-5">
+                        <p class="etiqueta">PJG / Mira y escucha</p>
+                        <h2 class="titulo">Conoce nuestros productos</h2>
+                        <p class="texto mb-4">Te enseñamos cómo usamos cada producto en nuestros entrenamientos. Y si quieres entrenar con nuestra música, dale al play.</p>
+                        <div class="musica">
+                            <p class="texto">Música para entrenar</p>
+                            <audio controls loop preload="none">
+                                <source src="audio/ambiente.mp3" type="audio/mpeg">
+                                Tu navegador no admite audio.
+                            </audio>
                         </div>
-                    </a>
-                    <a href="tienda.html" class="categoria oscura">
-                        <img src="img/equipamiento.webp" alt="Hilera de mancuernas en el gimnasio">
-                        <div>
-                            <h3>Equipamiento</h3>
-                            <p>Accesorios · Rendimiento · Fuerza</p>
-                        </div>
-                    </a>
-                    <a href="tienda.html" class="categoria clara">
-                        <img src="img/merch.webp" alt="Camiseta de tirantes, toalla y gorra colgadas">
-                        <div>
-                            <h3>Merch</h3>
-                            <p>Ropa · Gym bag · Identidad PJG</p>
-                        </div>
-                    </a>
+                    </div>
                 </div>
             </div>
         </section>
 
-        <section class="contacto" id="contacto">
-            <div class="contenedor">
-                <div class="intro">
-                    <p class="etiqueta">Hablamos</p>
-                    <h2 class="titulo">Contacta con nosotros</h2>
-                    <p class="texto">¿Dudas con un producto o con tu pedido? Escríbenos y te respondemos en menos de 24 horas.</p>
+        <section class="seccion">
+            <div class="container">
+                <p class="etiqueta">PJG / Categorías</p>
+                <h2 class="titulo mb-4">Equipa tu objetivo</h2>
+                <div class="row g-3">
+                    <div class="col-md-4">
+                        <a href="tienda.html?cat=suplementacion" class="categoria clara">
+                            <img src="img/suplementacion.webp" alt="Persona echando polvo de proteína en un shaker">
+                            <div>
+                                <h3>Suplementación</h3>
+                                <p>Proteína · Energía · Recuperación</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-4">
+                        <a href="tienda.html?cat=equipamiento" class="categoria oscura">
+                            <img src="img/equipamiento.webp" alt="Hilera de mancuernas en el gimnasio">
+                            <div>
+                                <h3>Equipamiento</h3>
+                                <p>Accesorios · Rendimiento · Fuerza</p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="col-md-4">
+                        <a href="tienda.html?cat=merch" class="categoria clara">
+                            <img src="img/merch.webp" alt="Camiseta de tirantes, toalla y gorra colgadas">
+                            <div>
+                                <h3>Merch</h3>
+                                <p>Ropa · Gym bag · Identidad PJG</p>
+                            </div>
+                        </a>
+                    </div>
                 </div>
+            </div>
+        </section>
 
-                <form action="#" method="POST" class="formulario">
-                    <div class="grupo">
-                        <label for="nombre">Nombre</label>
-                        <input type="text" id="nombre" name="nombre" placeholder="Tu nombre" required>
+        <section class="seccion seccion-oscura" id="contacto">
+            <div class="container">
+                <div class="row g-5">
+                    <div class="col-lg-5">
+                        <p class="etiqueta">Hablamos</p>
+                        <h2 class="titulo">Contacta con nosotros</h2>
+                        <p class="texto">¿Dudas con un producto o con tu pedido? Escríbenos y te respondemos en menos de 24 horas.</p>
+                        <ul class="list-unstyled texto mt-4">
+                            <li class="mb-2"><i class="bi bi-envelope text-primary me-2" aria-hidden="true"></i>hola@pjgfitness.es</li>
+                            <li class="mb-2"><i class="bi bi-telephone text-primary me-2" aria-hidden="true"></i>+34 600 000 000</li>
+                            <li><i class="bi bi-clock text-primary me-2" aria-hidden="true"></i>Lunes a viernes, 9:00 - 18:00</li>
+                        </ul>
                     </div>
-                    <div class="grupo">
-                        <label for="email">Correo electrónico</label>
-                        <input type="email" id="email" name="email" placeholder="tucorreo@ejemplo.com" required>
+                    <div class="col-lg-7">
+                        <form class="formulario needs-validation" data-form="contacto" novalidate>
+                            <div class="row g-3">
+                                <div class="col-md-6">
+                                    <label for="nombre" class="form-label">Nombre</label>
+                                    <input type="text" class="form-control" id="nombre" name="nombre" placeholder="Tu nombre" required>
+                                    <div class="invalid-feedback">Dinos cómo te llamas.</div>
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="email" class="form-label">Correo electrónico</label>
+                                    <input type="email" class="form-control" id="email" name="email" placeholder="tucorreo@ejemplo.com" required>
+                                    <div class="invalid-feedback">Escribe un correo válido.</div>
+                                </div>
+                                <div class="col-12">
+                                    <label for="asunto" class="form-label">Asunto</label>
+                                    <select id="asunto" name="asunto" class="form-select">
+                                        <option value="producto">Consulta sobre un producto</option>
+                                        <option value="pedido">Estado de mi pedido</option>
+                                        <option value="otro">Otro</option>
+                                    </select>
+                                </div>
+                                <div class="col-12">
+                                    <label for="mensaje" class="form-label">Mensaje</label>
+                                    <textarea id="mensaje" name="mensaje" class="form-control" rows="4" placeholder="Cuéntanos en qué podemos ayudarte" required></textarea>
+                                    <div class="invalid-feedback">Escribe tu mensaje.</div>
+                                </div>
+                                <div class="col-12">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="privacidad" name="privacidad" required>
+                                        <label class="form-check-label" for="privacidad">Acepto la política de privacidad</label>
+                                        <div class="invalid-feedback">Tienes que aceptarla para enviar el mensaje.</div>
+                                    </div>
+                                </div>
+                                <div class="col-12">
+                                    <button type="submit" class="btn btn-primary btn-lg">Enviar mensaje</button>
+                                </div>
+                            </div>
+                        </form>
                     </div>
-                    <div class="grupo">
-                        <label for="asunto">Asunto</label>
-                        <select id="asunto" name="asunto">
-                            <option value="producto">Consulta sobre un producto</option>
-                            <option value="pedido">Estado de mi pedido</option>
-                            <option value="otro">Otro</option>
-                        </select>
-                    </div>
-                    <div class="grupo">
-                        <label for="mensaje">Mensaje</label>
-                        <textarea id="mensaje" name="mensaje" rows="4" placeholder="Cuéntanos en qué podemos ayudarte" required></textarea>
-                    </div>
-                    <label class="check">
-                        <input type="checkbox" name="privacidad" required>
-                        Acepto la política de privacidad
-                    </label>
-                    <button type="submit" class="boton">Enviar mensaje</button>
-                </form>
+                </div>
             </div>
         </section>
     </main>
 
-    <footer class="footer">
-        <p>
-            <a href="index.html">PJG Fitness</a> por Pedro Jurado Gavilán está bajo licencia
-            <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" target="_blank" rel="license noopener noreferrer">CC BY-NC-SA 4.0</a>
-        </p>
-        <p class="iconos-cc">
-            <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt="Creative Commons">
-            <img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt="Atribución">
-            <img src="https://mirrors.creativecommons.org/presskit/icons/nc.svg" alt="No comercial">
-            <img src="https://mirrors.creativecommons.org/presskit/icons/sa.svg" alt="Compartir igual">
-        </p>
+    <!-- Footer común -->
+    <footer class="footer-pjg">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-lg-4">
+                    <p class="marca"><i class="bi bi-lightning-charge-fill" aria-hidden="true"></i> PJG FITNESS</p>
+                    <p>Suplementación directa, prendas resistentes y el material que necesitas para llevar cada sesión al límite.</p>
+                    <div class="redes d-flex gap-2">
+                        <a href="https://www.instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Instagram"><i class="bi bi-instagram"></i></a>
+                        <a href="https://www.tiktok.com/" target="_blank" rel="noopener noreferrer" aria-label="TikTok"><i class="bi bi-tiktok"></i></a>
+                        <a href="https://www.youtube.com/" target="_blank" rel="noopener noreferrer" aria-label="YouTube"><i class="bi bi-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h2>Tienda</h2>
+                    <ul>
+                        <li><a href="tienda.html?cat=suplementacion">Suplementación</a></li>
+                        <li><a href="tienda.html?cat=equipamiento">Equipamiento</a></li>
+                        <li><a href="tienda.html?cat=merch">Merch</a></li>
+                        <li><a href="novedades.html">Iron Series</a></li>
+                    </ul>
+                </div>
+                <div class="col-6 col-lg-2">
+                    <h2>Mi cuenta</h2>
+                    <ul>
+                        <li><a href="login.html">Iniciar sesión</a></li>
+                        <li><a href="registro.html">Crear cuenta</a></li>
+                        <li><a href="pago.html">Finalizar compra</a></li>
+                        <li><a href="index.html#contacto">Contacto</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-4">
+                    <h2>Newsletter</h2>
+                    <p>Entérate antes que nadie de los lanzamientos y llévate un 10 % de descuento.</p>
+                    <form class="needs-validation" data-form="newsletter" novalidate>
+                        <div class="input-group has-validation">
+                            <label for="emailNews" class="visually-hidden">Correo electrónico</label>
+                            <input type="email" class="form-control" id="emailNews" placeholder="tucorreo@ejemplo.com" required>
+                            <button class="btn btn-primary" type="submit">Unirme</button>
+                            <div class="invalid-feedback">Escribe un correo válido.</div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="licencia">
+                <p class="mb-0">
+                    &copy; <span class="anio">2026</span> <a href="index.html">PJG Fitness</a> por Pedro Jurado Gavilán está bajo licencia
+                    <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.es" target="_blank" rel="license noopener noreferrer">CC BY-NC-SA 4.0</a>
+                </p>
+                <p class="iconos-cc">
+                    <img src="https://mirrors.creativecommons.org/presskit/icons/cc.svg" alt="Creative Commons">
+                    <img src="https://mirrors.creativecommons.org/presskit/icons/by.svg" alt="Atribución">
+                    <img src="https://mirrors.creativecommons.org/presskit/icons/nc.svg" alt="No comercial">
+                    <img src="https://mirrors.creativecommons.org/presskit/icons/sa.svg" alt="Compartir igual">
+                </p>
+            </div>
+        </div>
     </footer>
+
+    <!-- Carrito lateral (offcanvas de Bootstrap) -->
+    <div class="offcanvas offcanvas-end offcanvas-carrito" tabindex="-1" id="carrito" aria-labelledby="tituloCarrito">
+        <div class="offcanvas-header">
+            <h2 class="offcanvas-title" id="tituloCarrito">Tu carrito</h2>
+            <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Cerrar carrito"></button>
+        </div>
+        <div class="offcanvas-body" id="listaCarrito"></div>
+        <div class="offcanvas-footer">
+            <p class="total"><span>Total</span><span id="totalCarrito">0,00 €</span></p>
+            <a href="pago.html" class="btn btn-primary btn-lg w-100" id="btnFinalizar">Finalizar compra</a>
+        </div>
+    </div>
+
+    <!-- Aviso al añadir un producto (toast de Bootstrap) -->
+    <div class="toast-container position-fixed end-0 p-3">
+        <div id="toastCarrito" class="toast" role="status" aria-live="polite" aria-atomic="true">
+            <div class="toast-header">
+                <i class="bi bi-bag-check-fill text-primary me-2" aria-hidden="true"></i>
+                <strong class="me-auto">Carrito</strong>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Cerrar"></button>
+            </div>
+            <div class="toast-body">
+                <span></span>
+                <div class="mt-2 d-flex gap-2">
+                    <button type="button" class="btn btn-sm btn-outline-light" data-bs-toggle="offcanvas" data-bs-target="#carrito">Ver carrito</button>
+                    <a href="pago.html" class="btn btn-sm btn-primary">Comprar ya</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal de aviso: compra, registro, inicio de sesión, mensajes... -->
+    <div class="modal fade modal-aviso" id="modalAviso" tabindex="-1" aria-labelledby="tituloAviso" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div class="icono"><i class="bi bi-check-lg" aria-hidden="true"></i></div>
+                    <h2 class="modal-title" id="tituloAviso">Hecho</h2>
+                    <p class="mensaje texto mb-0"></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">Cerrar</button>
+                    <a href="#" class="btn btn-primary accion d-none">Continuar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="js/main.js"></script>
 </body>
 </html>

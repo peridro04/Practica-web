@@ -1,0 +1,83 @@
+// ==========================================================
+// Slider de productos destacados solo con CSS (práctica 7)
+// Ahora cada diapositiva es un enlace a su producto
+// ==========================================================
+
+.slider {
+    position: relative;
+    height: 420px;
+    overflow: hidden;
+    border-radius: $radio;
+    background-color: $tarjeta;
+
+    @include media-breakpoint-down(lg) {
+        height: 340px;
+    }
+
+    @include media-breakpoint-down(md) {
+        height: 240px;
+    }
+
+    &:hover .diapositiva,
+    &:hover .progreso {
+        animation-play-state: paused;
+    }
+}
+
+.diapositiva {
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    visibility: hidden;
+    color: $texto;
+    animation: pasar 20s infinite;
+
+    img {
+        @include imagen-cubre(100%);
+    }
+
+    &:hover {
+        color: $texto;
+    }
+
+    // Cada diapositiva empieza 4 segundos después de la anterior
+    @for $i from 2 through 5 {
+        &:nth-child(#{$i}) {
+            animation-delay: ($i - 1) * 4s;
+        }
+    }
+}
+
+.slide-texto {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    margin: 0;
+    padding: 20px 28px 26px;
+    background: linear-gradient(transparent, rgba(0, 0, 0, .85));
+    font-size: 2.1rem;
+    font-weight: 800;
+    text-transform: uppercase;
+
+    span {
+        color: $rojo;
+        font-size: 1.2rem;
+        margin-left: .5rem;
+    }
+
+    @include media-breakpoint-down(md) {
+        padding: 14px 16px 18px;
+        font-size: 1.4rem;
+    }
+}
+
+// Barra roja que se llena mientras se ve cada foto
+.progreso {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 5px;
+    background-color: $rojo;
+    animation: llenar 4s linear infinite;
+}
